@@ -1,7 +1,7 @@
 <h1>Blog</h1>
 
 <% if current_user.try(:admin?) %>
-  <%= link_to 'New Post', new_post_path, class: 'btn-warning' %>
+  <%= link_to 'New Post', new_post_path, class: 'btn btn-warning' %>
 <% end %>
 
 <% @posts.each do |post| %>

@@ -1,20 +1,25 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(id: :desc)
   end
 
   def new
-    @post = Post.new
-    unless current_user.admin == true
+    unless admin?
       flash[:notice] = 'You do not have posting rights'
       redirect_to root_path
     end
+    @post = Post.new
   end
 
   def create
-    @post = Post.create(post_params)
-    redirect_to post_path(@post)
+    if admin?
+      @post = Post.create(post_params)
+      redirect_to post_path(@post)
+    else
+      flash[:notice] = 'You do not have posting rights'
+      redirect_to root_path
+    end
   end
 
   def show
@@ -25,6 +30,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :body)
+  end
+
+  def admin?
+    current_user.admin == true
   end
 
 end
