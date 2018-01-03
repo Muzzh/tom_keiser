@@ -4,10 +4,14 @@
   <%= link_to 'New Post', new_post_path, class: 'btn btn-warning' %>
 <% end %>
 
-<% @posts.each do |post| %>
-  <h1><%= post.title %></h1>
-  <br />
-  <p><%= post.body %></p>
+<br />
 
+<% @posts.each do |post| %>
+  <div class="post-box">
+    <h1><%= link_to post.title, post_path(post) %></h1>
+    <br />
+    <p><%= post.body %></p>
+    
+  </div>
 
 <% end %>
