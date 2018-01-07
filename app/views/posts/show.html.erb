@@ -4,4 +4,7 @@
   <br />
   <p><%= @post.body %></p>
   
+  <% if current_user.try(:admin?) %>
+    <%= link_to 'Edit this post', edit_post_path(@post), class: 'btn btn-warning' %>
+  <% end %>
 </div>
