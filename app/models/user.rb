@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
 
+  has_many :posts
+
   def admin?
     admin == true
   end

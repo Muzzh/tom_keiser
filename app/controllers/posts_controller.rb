@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def create
     if current_user.admin?
-      @post = Post.create(post_params)
+      @post = current_user.posts.create(post_params)
       redirect_to post_path(@post)
     else
       flash[:notice] = 'You do not have posting rights'
