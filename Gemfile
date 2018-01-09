@@ -32,6 +32,12 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'figaro'
+gem 'fog-aws'
+
 gem 'popper_js', '~> 1.11.1'
 gem 'bootstrap', '4.0.0.alpha6'
 
