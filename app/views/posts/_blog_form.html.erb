@@ -1,5 +1,8 @@
-<%= simple_form_for @post do |f| %>
-  <%= f.input :title %>
-  <%= f.input :body, :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}} %>
+<%= form_for @post do |f| %>
+  <%= f.label :title %></br>
+  <%= f.text_field :title %>
+  </br>
+  <%= f.label :body %></br>
+  <%= f.cktext_area :body %>
   <%= f.submit 'Post', class: 'btn-primary' %>
 <% end %>
