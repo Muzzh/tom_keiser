@@ -2,7 +2,7 @@
 
   <h1><%= @post.title %></h1>
   <br />
-  <p><%= @post.body %></p>
+  <%= raw @post.body %>
   
   <% if current_user.try(:admin?) %>
     <%= link_to 'Edit this post', edit_post_path(@post), class: 'btn btn-warning' %>

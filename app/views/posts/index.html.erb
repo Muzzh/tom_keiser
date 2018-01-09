@@ -10,7 +10,7 @@
   <div class="post-box">
     <h1><%= link_to post.title, post_path(post) %></h1>
     <br />
-    <p><%= post.body %></p>
+    <%= raw post.body %>
     <p class="text-right"><i><%= post.user.name %></i></p>
   </div>
 
