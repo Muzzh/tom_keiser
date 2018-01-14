@@ -4,26 +4,32 @@
 
 
 body {
-  background-color: #81D5DE;
+  background-color: #90B384;
 }
 
 .top-brand {
-  background-color: white;
+  background-color: #0A2D4D;
 }
 a.brand {
-  color: gray;
+  color: #9BCFE0;
 }
 .brand {
   font-size: 30px;
   margin-left: 15px;
 }
+.navbar {
+  background-color: #0A2D4D;
+}
 .page-container {
   max-width: 90%;
   margin-left: 5%;
 }
+.temp-scroller img {
+  max-width: 80%;
+}
 
 .post-box {
-  background-color: #A5DFF2;
+  background-color: #DDF2D5;
   border-radius: 5px;
   -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);

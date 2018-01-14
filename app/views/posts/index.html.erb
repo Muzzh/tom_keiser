@@ -1,5 +1,9 @@
-<h1>Blog</h1>
+<br />
+<div class="temp-scroller">
+  <%= image_tag 'Israel.jpg' %>
+</div>
 
+<div>
 <% if current_user.try(:admin?) %>
   <%= link_to 'New Post', new_post_path, class: 'btn btn-warning' %>
 <% end %>
@@ -15,3 +19,5 @@
   </div>
 
 <% end %>
+  
+</div>
