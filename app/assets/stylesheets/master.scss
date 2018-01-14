@@ -3,14 +3,27 @@
 
 
 
+body {
+  background-color: #81D5DE;
+}
 
-
+.top-brand {
+  background-color: white;
+}
+a.brand {
+  color: gray;
+}
+.brand {
+  font-size: 30px;
+  margin-left: 15px;
+}
 .page-container {
   max-width: 90%;
   margin-left: 5%;
 }
 
 .post-box {
+  background-color: #A5DFF2;
   border-radius: 5px;
   -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
