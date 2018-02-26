@@ -1,9 +1,10 @@
-<div class="post-box">
+<div class="general-box">
 
   <h1><%= @post.title %></h1>
   <br />
   <%= raw @post.body %>
-  
+  <p class="text-right"><i><%= @post.user.name %></i></p>
+  <br /><br />
   <% if current_user.try(:admin?) %>
     <%= link_to 'Edit this post', edit_post_path(@post), class: 'btn btn-warning' %>
   <% end %>

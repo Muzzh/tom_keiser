@@ -2,22 +2,33 @@
 <div class="temp-scroller">
   <%= image_tag 'Israel.jpg' %>
 </div>
-
+<br />
 <div>
 <% if current_user.try(:admin?) %>
-  <%= link_to 'New Post', new_post_path, class: 'btn btn-warning' %>
+  <%= link_to 'New Post', new_post_path, class: 'btn btn-danger' %>
 <% end %>
+</div>
 
 <br />
-
-<% @posts.each do |post| %>
-  <div class="post-box">
-    <h1><%= link_to post.title, post_path(post) %></h1>
-    <br />
-    <%= raw post.body %>
-    <p class="text-right"><i><%= post.user.name %></i></p>
+<div class="row">
+  <div class="col-xs-12 col-md-9" data-spy="scroll" data-target="#blog-nav" data-offset="0">
+    <% @posts.each do |post| %>
+      <div class="blog-box">
+        <h1><%= link_to post.title, post_path(post), id: post.id %></h1>
+        <br />
+        <%= raw post.body %>
+        <p class="text-right"><i><%= post.user.name %></i></p>
+      </div>
+    <% end %>
   </div>
-
-<% end %>
-  
+  <div id="blog-nav" class="col-md-3 blog-menu">
+    <div class="blog-menu-box">
+      <h5>Quick Access Menu</h5>
+      <br />
+      <% @posts.each do |post| %>
+        <%= link_to post.title, root_path(anchor: post.id) %>
+        <br />
+      <% end %>
+    </div>
+  </div>
 </div>

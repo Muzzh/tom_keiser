@@ -28,7 +28,7 @@ a.brand {
   max-width: 80%;
 }
 
-.post-box {
+.general-box {
   background-color: #DDF2D5;
   border-radius: 5px;
   -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
@@ -47,7 +47,42 @@ a.brand {
   margin-left: 8em;
   margin-right: 8em;
 }
-.article {
+.blog-box {
+  background-color: #DDF2D5;
+  border-radius: 5px;
+  -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px 4em 20px 4em;
+  text-align: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); 
+  transition: box-shadow .3s ease;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+.blog-menu-box {
+  background-color: #DDF2D5;
+  border-radius: 5px;
+  -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px 4em 20px 4em;
+  text-align: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); 
+  transition: box-shadow .3s ease;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  min-height: 200px;
+}
+.blog-menu {
 }
 .article p {
   text-indent: 2.5em;
