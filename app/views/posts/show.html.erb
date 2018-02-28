@@ -8,4 +8,19 @@
   <% if current_user.try(:admin?) %>
     <%= link_to 'Edit this post', edit_post_path(@post), class: 'btn btn-warning' %>
   <% end %>
+  <%= link_to "Contribute to the conversation", post_path(@post, anchor: 'comment-box-tag'), class: 'btn btn-primary' %>
+</div>
+<% @post.comments.each do |comment| %>
+  <div class="comment-box">
+    <blockquote>
+      <%= comment.message %><br />
+      <small><i><%= comment.user.name unless comment.user == nil %></i></small>
+    </blockquote>
+  </div>
+<% end %>
+<div id="comment-box-tag" class="comment-box">
+  <%= simple_form_for @comment, url: post_comments_path(@post) do |f| %>
+    <%= f.input :message %>
+    <%= f.submit "Add your comment", class: 'btn btn-warning' %>
+  <% end %>
 </div>
