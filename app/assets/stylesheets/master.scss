@@ -15,6 +15,10 @@ h1 h2 h3 {
 }
 .top-brand {
   background-color: #0A2D4D;
+  height: 90px;
+  position: fixed;
+  width: 100%;
+  z-index: 149;
 }
 a.brand {
   color: #9BCFE0;
@@ -23,12 +27,27 @@ a.brand {
   font-size: 30px;
   margin-left: 15px;
 }
-.navbar {
+.site-nav {
   background-color: #0A2D4D;
+  z-index: 150;
+  padding: 0 8px 0 8px;
+  margin-top: 45px;
+}
+.side-nav {
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+.side-nav-scrolled {
+  position: fixed;
+  top: 90px;
 }
 .page-container {
   max-width: 90%;
   margin-left: 5%;
+  margin-top: 90px;
+}
+.title-section {
+  margin-bottom: 8px;
 }
 .temp-scroller img {
   max-width: 80%;
@@ -77,14 +96,14 @@ a.brand {
   -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 20px 4em 20px 4em;
+  padding: 20px 64px 20px 64px;
   text-align: center;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); 
   transition: box-shadow .3s ease;
-  margin-top: 15px;
+  margin: 15px 0 25px 0;
   margin-bottom: 25px;
   min-height: 200px;
 }
@@ -107,7 +126,9 @@ a.brand {
   margin-left: 10em;
   margin-right: 10em;
 }
-.blog-menu {
+.post-container {
+  float: left;
+  width: 75%;
 }
 .article p {
   text-indent: 2.5em;

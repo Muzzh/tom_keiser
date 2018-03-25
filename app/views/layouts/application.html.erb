@@ -12,7 +12,7 @@
     <div class="top-brand">
       <%= link_to 'TOM KEISER', root_path, class: 'brand' %>
     </div>
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-faded">
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-faded site-nav fixed-top">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,7 +35,7 @@
             <%= link_to 'Forum', '#', class: 'nav-link' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Biography', '#', class: 'nav-link' %>
+            <%= link_to 'Info', '#', class: 'nav-link' %>
           </li>
         </ul>
         <ul class= 'navbar-nav pull-right'>
@@ -52,10 +52,6 @@
             </li>
           <% end %>
         </ul>
-        <!-- <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form> -->
       </div>
     </nav>
     <% if notice.present? %>
@@ -64,6 +60,7 @@
     <% if alert.present? %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+    <br />
     <div class="page-container text-center">
       <%= yield %>
     </div>

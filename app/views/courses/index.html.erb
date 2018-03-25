@@ -1,14 +1,50 @@
-<h1>Courses information</h1>
-<div>
-  <% if current_user.try(:admin?) %>
-    <%= link_to 'New Course', new_course_path, class: 'btn btn-danger' %>
-  <% end %>
-</div>
-<br />
-<% @courses.each do |course| %>
-  <div class="blog-box">
-    <h2><%= course.title %></h2>
-    <br />
-    <p><%= raw course.body %></p>
+<div class="title-section">
+  <h1>Courses information</h1>
+  <br />
+  <div>
+    <% if current_user.try(:admin?) %>
+      <%= link_to 'New Course', new_course_path, class: 'btn btn-danger' %>
+    <% end %>
   </div>
-<% end %>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-md-9 post-container" data-spy="scroll" data-target="#course-nav" data-offset="0">
+    <% @courses.each do |course| %>
+      <div class="blog-box">
+        <h2 id="<%= course.id %>"><%= course.title %></h2>
+        <br />
+        <p><%= raw course.body %></p>
+      </div>
+    <% end %>
+  </div>
+  <nav class="col-md-3 navbar side-nav">
+    <div class="blog-menu-box">
+      <h5 class="navbar-brand">Quick Access Menu</h5>
+      <br />
+      <ul class="nav flex-column nav-pills">
+        <% @courses.each do |course| %>
+          <li class="nav-item"><%= link_to course.title, courses_path(anchor: course.id), class: 'nav-link' %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<script type="text/javascript">
+  var menu = $('.side-nav');
+  var menuScrolled = 'side-nav-scrolled';
+  var offsetTop = ($('.title-section').height() + 32);
+  var offsetLeft = $('.side-nav').offset().left
+  var sideNavWidth = $('.side-nav').width()
+
+  $(window).scroll(function() {
+    if( $(this).scrollTop() > offsetTop ) {
+      menu.addClass(menuScrolled);
+      $('.side-nav-scrolled').css('left', (offsetLeft + 'px'));
+      $('.side-nav-scrolled').css('width', (sideNavWidth + 'px'));
+    } else {
+      $(('.' + menuScrolled)).css('left', '0');
+      menu.removeClass(menuScrolled);
+    }
+  });
+</script>
