@@ -33,7 +33,7 @@
 <script type="text/javascript">
   var menu = $('.side-nav');
   var menuScrolled = 'side-nav-scrolled';
-  var offsetTop = ($('.title-section').height() + 32);
+  var offsetTop = (menu.offset().top - $('.top-brand').height());
   var offsetLeft = $('.side-nav').offset().left
   var sideNavWidth = $('.side-nav').width()
 

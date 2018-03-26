@@ -3,7 +3,7 @@
   <%= image_tag 'Israel.jpg' %>
 </div>
 <br />
-<div>
+<div class="title-section">
   <% if current_user.try(:admin?) %>
     <%= link_to 'New Post', new_post_path, class: 'btn btn-danger' %>
   <% end %>
@@ -11,7 +11,7 @@
 
 <br />
 <div class="row">
-  <div class="col-xs-12 col-md-9" data-spy="scroll" data-target="#blog-nav" data-offset="0">
+  <div class="col-xs-12 col-md-9 post-container" data-spy="scroll" data-target="#blog-nav" data-offset="0">
     <% @posts.each do |post| %>
       <div class="blog-box">
         <h1><%= link_to post.title, post_path(post), id: post.id %></h1>
@@ -21,14 +21,34 @@
       </div>
     <% end %>
   </div>
-  <div id="blog-nav" class="col-md-3 blog-menu">
+  <nav id="blog-nav" class="col-md-3 navbar side-nav">
     <div class="blog-menu-box">
-      <h5>Quick Access Menu</h5>
+      <h5 class="navbar-brand">Quick Access Menu</h5>
       <br />
-      <% @posts.each do |post| %>
-        <%= link_to post.title, root_path(anchor: post.id) %>
-        <br />
-      <% end %>
+      <ul class="nav flex-column nav-pills">
+        <% @posts.each do |post| %>
+          <li class="nav-item"><%= link_to post.title, root_path(anchor: post.id) %></li>
+        <% end %>
+      </ul>
     </div>
-  </div>
+  </nav>
 </div>
+
+<script type="text/javascript">
+  var menu = $('.side-nav');
+  var menuScrolled = 'side-nav-scrolled';
+  var offsetTop = (menu.offset().top - $('.top-brand').height());
+  var offsetLeft = menu.offset().left;
+  var sideNavWidth = $('.side-nav').width();
+
+  $(window).scroll(function() {
+    if( $(this).scrollTop() > offsetTop ) {
+      menu.addClass(menuScrolled);
+      $('.side-nav-scrolled').css('left', (offsetLeft + 'px'));
+      $('.side-nav-scrolled').css('width', (sideNavWidth + 'px'));
+    } else {
+      $(('.' + menuScrolled)).css('left', '0');
+      menu.removeClass(menuScrolled);
+    }
+  });
+</script>
