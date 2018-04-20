@@ -39,7 +39,7 @@
   var menuScrolled = 'side-nav-scrolled';
   var offsetTop = (menu.offset().top - $('.top-brand').height());
   var offsetLeft = menu.offset().left;
-  var sideNavWidth = $('.side-nav').width();
+  var sideNavWidth = menu.width();
 
   $(window).scroll(function() {
     if( $(this).scrollTop() > offsetTop ) {
